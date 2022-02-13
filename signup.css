@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Oxygen&family=Quicksand:wght@500&family=Raleway:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
+  background: url("https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
+    no-repeat center;
+  background-attachment: fixed;
+}
+
+/* ################################## Form Body Design ################################################ */
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 50px auto;
+  background-color: rgba(0, 0, 0, 0.658);
+  box-shadow: 0px 0px 165px 30px rgba(0, 0, 0, 0.85) inset;
+
+  padding: 40px 40px 60px 40px;
+  color: rgba(255, 255, 255, 0.767);
+}
+h2 {
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* ################################## Form Field Design ################################################ */
+.form-check {
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  position: relative;
+  width: 90%;
+}
+
+.form-check label {
+  display: inline-block;
+  margin-bottom: 1px;
+}
+
+.form-check input {
+  margin-top: 10px;
+  margin-left: 20px;
+  color: rgba(255, 255, 255, 0.747);
+  font-style: italic;
+  font-family: "Quicksand", sans-serif;
+  background: transparent;
+
+  border-radius: 10px;
+  height: 40px;
+  border-bottom: 3px solid #f0f0f0c0;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  padding: 1px;
+  width: 100%;
+  transition: all 0.8s;
+}
+.form-check ::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.form-check input:focus {
+  outline: 0;
+  border-color: rgba(70, 192, 0, 0.452);
+}
+
+.form-check.success input {
+  border-color: #2ecc71;
+}
+
+.form-check.error input {
+  border-bottom: 3px solid #ff19008f;
+}
+/* ################################## Form Error mssg Design ################################################ */
+.form-check small {
+  color: #e74c3c;
+  position: absolute;
+  margin-left: 30px;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.form-check.error small {
+  visibility: visible;
+}
+/* ################################## Form Button Design ################################################ */
+.form-container button {
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 2px;
+  margin-top: 0px;
+
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}
+.form-container .bttn {
+  outline: 0;
+  position: absolute;
+  left: 50%;
+
+  transition: all 0.3s;
+  text-align: center;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.form-container .bttn:focus {
+  outline: 0;
+  position: absolute;
+  left: 50%;
+  border-bottom: 2px solid #19008883;
+
+  transition: all 0.3s;
+  text-align: center;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* ################################## Form Icon Design ################################################ */
+.form-check i {
+  position: absolute;
+  transform: translateY(105%);
+  font-size: 25px;
+  color: #ffffffa6;
+  transition: all 0.3s;
+}
+.icon {
+  margin-top: -15px;
+}
+.icon1 {
+  margin-top: -5px;
+}
+
+.form-check.success i {
+  color: #12df67;
+  position: absolute;
+  transform: translateY(105%);
+  font-size: 25px;
+}
+.form-check.error i {
+  color: #ff190086;
+  position: absolute;
+  transform: translateY(105%);
+  font-size: 25px;
+}
+/* ################################## Form Password show icon Design ################################################ */
+.eye {
+  float: right;
+  cursor: pointer;
+  transform: translateY(00%);
+  font-size: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.eye i {
+  transform: translateY(-100%);
+}
+.form-check.success .eye i {
+  transform: translateY(-100%);
+}
+.form-check.error .eye i {
+  transform: translateY(-100%);
+}
+
+#hide1 {
+  display: none;
+}
+/* ################################## Password strength indicator Design ################################################ */
+.indicator {
+  height: 5px;
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+  transition: all 1s;
+}
+
+.indicator span {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: lightgrey;
+  border-radius: 5px;
+}
+.indicator span:nth-child(2) {
+  margin: 0 3px;
+}
+.indicator span.active:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.indicator span.weak:before {
+  background-color: #fd0015;
+}
+.indicator span.medium:before {
+  background-color: orange;
+}
+.indicator span.strong:before {
+  background-color: #23ad5c;
+}
+/* ################################## Pass strength text Design ################################################ */
+.text {
+  font-size: 15px;
+  margin-left: 30px;
+  color: #e74c3c;
+
+  display: none;
+  margin-bottom: 2px;
+}
+.text.weak {
+  color: #ff4757;
+}
+.text.medium {
+  color: orange;
+}
+.text.strong {
+  color: #23ad5c;
+}
